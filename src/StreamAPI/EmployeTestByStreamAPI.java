@@ -40,7 +40,9 @@ public static void main(String[] args) {
 	
 //if to print salary only
 	Comparator<Integer> sort =(s1,s2)->s2-s1;
-	Integer maxSalary = list.stream().map(Employee::getSalary).max((s1,s2)->s1-s2).get();
+//	R apply(T t);
+	Function<Employee, Integer> mapper=(e)->e.getSalary();
+	Integer maxSalary = list.stream().map(mapper).max((s1,s2)->s1-s2).get();
 	System.out.println(maxSalary);
 	
 //Q5.fetch the employee who has second highest salary	

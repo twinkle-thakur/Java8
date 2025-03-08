@@ -1,6 +1,6 @@
 package collections;
 
-	import java.util.Comparator;
+import java.util.Comparator;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
@@ -26,12 +26,20 @@ import StreamAPI.Employee2;
 		
 		//4. public abstract java.util.Iterator<E> iterator();
 			//	Iterator<Employee> iterator();
-//		for(Employee e:list) {
-//			System.out.println(e.getId()+" "+e.getName()+" "+e.getCompany()+" "+e.getSalary());;
-//		}
+		Iterator<Employee> iterator=list.iterator();
+		while(iterator.hasNext()) {
+			System.out.println(iterator.next().getName());
+			 //       fail fast
+			//when you want to get and modify data at same time it will show concorrent modification expection
+			//becoz under loop 1 thread works at a time
+			//list.add(new Employee(10, "Riya", "TCS", 25000)))
+			//how to resolve this exception
+			//copyonArrayList() becoz it stores copy of actual array
+		}
+
 		
 		//5. public abstract java.lang.Object[] toArray();
-		Object[] array=list.toArray();
+	//	Object[] array=list.toArray();
 		
 		
 		//6. public abstract <T> T[] toArray(T[]);
@@ -56,11 +64,12 @@ import StreamAPI.Employee2;
 	//	System.out.println(list.containsAll(list2));
 		
 		//8.public abstract boolean addAll(java.util.Collection<? extends E>)
+	//	list.addAll(list2);
 		
 		//9.public abstract boolean addAll(int, java.util.Collection<? extends E>)
 		//java.util.Collection<? extends E>
-		list.addAll(2,list2 );
-//		System.out.println(",,,,");
+	//	list.addAll(2,list2 );
+		
 		//10.public abstract boolean removeAll(java.util.Collection<?>);
 //	    list.removeAll(list);
 //	   System.out.println(list.size()); 
@@ -70,8 +79,8 @@ import StreamAPI.Employee2;
 //	   System.out.println(list.size()); 
 	   
 	   //12.  public default void replaceAll(java.util.function.UnaryOperator<E>)
-	  // list.replaceAll((UnaryOperator<Employee>) new Employee(5,"t","s",5));
-	   
+	//   list.replaceAll();
+	 
 	  //13.  public default void sort(java.util.Comparator<? super E>);
 		 Comparator<Employee> sortBy = (s1, s2) -> {
 				int diff = (s1.getSalary()-s2.getSalary());
@@ -111,38 +120,40 @@ import StreamAPI.Employee2;
 	//19.public abstract void add(int, E);
 	  list.add(3, new Employee(30,"khushi","tcs",70000) );
 	  for(Employee e1:list) {
-		System.out.println(e1.getId()+" "+e1.getName()+" "+e1.getCompany()+" "+e1.getSalary());;
+//		System.out.println(e1.getId()+" "+e1.getName()+" "+e1.getCompany()+" "+e1.getSalary());;
 		}
 	  
 	 //20. public abstract E remove(int) 
 		list.remove(5);
-		System.out.println("after removing");
+	//	System.out.println("after removing");
 		 for(Employee e1:list) {
 	//			System.out.println(e1.getId()+" "+e1.getName()+" "+e1.getCompany()+" "+e1.getSalary());;
 			}
 		 
 	//21.public abstract int indexOf(java.lang.Object);
-	//	 list.indexOf();
-		 
+		 System.out.println("....indexof");
+		 int indexOf = list.indexOf(new Employee(30,"khushi","tcs",70000) );
+		 System.out.println(indexOf);
 		 
 	//22.public abstract int lastIndexOf(java.lang.Object);
 		 
 		 
 	//23.  public abstract java.util.List<E> subList(int, int);
 		 list.subList(0, 4);
-		 for(Employee e1:list) {
-	//			System.out.println(e1.getId()+" "+e1.getName()+" "+e1.getCompany()+" "+e1.getSalary());;
-			}
 		 
-	//24.  public default void addFirst(E);
-	//	list.addFirst(new Employee(10,"g","t",5));
 		 for(Employee e1:list) {
-			System.out.println(e1.getId()+" "+e1.getName()+" "+e1.getCompany()+" "+e1.getSalary());;
+				System.out.println(e1.getId()+" "+e1.getName()+" "+e1.getCompany()+" "+e1.getSalary());;
+			}
+		
+	//24.  public default void addFirst(E);
+		//list.addFirst(new Employee(10,"g","t",5));
+		 for(Employee e1:list) {
+		//	System.out.println(e1.getId()+" "+e1.getName()+" "+e1.getCompany()+" "+e1.getSalary());;
 						}
 		 
 		 
 //	25.public default void addLast(E);
-		
+	
 //	26.public default E getFirst();
 	
 	
@@ -157,7 +168,8 @@ import StreamAPI.Employee2;
 //	30.public default java.util.List<E> reversed();
 		 
 //	31.public static <E> java.util.List<E> of();
-		 
+		
+		
 //  public static <E> java.util.List<E> copyOf(java.util.Collection<? extends E>)	
 		 
 	}   

@@ -10,10 +10,14 @@ package collections;
 	public class MapAPIPractice {
 		public static void main(String[] args) {
 			Map<String, Integer> map = new HashMap<>();
+			
+			//1. public abstract V put(K, V);
 			map.put("Twinkle", 40000);
 			map.put("Prince", 35000);
 			map.put("Kartik", 40000);
 			map.put("Kundan", 40000);
+			
+			//for iterating
 			System.out.println("Iterate entries from the map ");
 			 // public abstract java.util.Set<java.util.Map$Entry<K, V>> entrySet();//To Iterate the entries
 			Set<Entry<String, Integer>> entrySet = map.entrySet();
@@ -37,9 +41,25 @@ package collections;
 		//map.forEach(System.out::println);
 //		map.entrySet().forEach(System.out::println);
 //		map.entrySet().forEach(e->System.out.println(e.getKey()+ " "+e.getValue()));
-		//map.forEach((k,v)->System.out.println(k+" "+v));
+		map.forEach((k,v)->System.out.println(k+" "+v));
 		map.keySet().forEach(System.out::println);
 		map.values().forEach(System.out::println);
+		
+		//public abstract int size();
+		System.out.println(map.size());
+		
+		//  public abstract boolean isEmpty();
+		System.out.println(map.isEmpty());
+		
+		//  public abstract boolean containsKey(java.lang.Object);
+	//map.containsKey();
+		
+		//  public abstract V get(java.lang.Object);
+		System.out.println(map.get(con));
+		
+		//public default V replace(K, V);
+		map.replace("Twinkle", 35000);
+		System.out.print(map);
 		}
 
 	}
