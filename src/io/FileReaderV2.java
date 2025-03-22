@@ -12,7 +12,7 @@ public static void main(String[] args) {
 	File file=new File("myTest.txt");
 	//FileReader is implementing Closable interface thats why we can use with try with resource
 	Instant start=Instant.now();
-	try(FileReader fr=new FileReader(file);) {
+	try(FileReader fr=new FileReader(file)) {
 		 
 		int ch = 0;
 		while((ch=fr.read())!=-1) {

@@ -14,7 +14,8 @@ public static void main(String[] args) {
 	try {
 		List<String> list = Files.readAllLines(path);
 		list.forEach(System.out::println);
-		Map<String, Long> frequency=list.stream().collect(Collectors.groupingBy(name -> name, Collectors.counting()));
+		Map<String, Long> frequency=list.stream()
+				.collect(Collectors.groupingBy(name -> name, Collectors.counting()));
 		frequency.forEach((name, count) -> System.out.println(name + ": " + count));
 	} catch (IOException e) {
 		e.printStackTrace();
