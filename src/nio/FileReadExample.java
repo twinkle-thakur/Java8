@@ -11,6 +11,7 @@ public static void main(String[] args) {
 	Path path=Paths.get("myTest.txt");
 	try {
 		List<String> allLines = Files.readAllLines(path);
+		
 		System.out.println(allLines.size());
 		allLines.forEach(System.out::println);
 	} catch (IOException e) {
