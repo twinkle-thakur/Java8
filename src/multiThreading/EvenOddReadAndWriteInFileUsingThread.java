@@ -7,11 +7,6 @@ import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
 import java.util.List;
 
-/*
- * Step1:Take path of the file in which you want to write
- * Step2:if file not exists create file
- * 
- * */
 public class EvenOddReadAndWriteInFileUsingThread {
 public static void main(String[] args) throws IOException {
 	Runnable evenThread=()->{
