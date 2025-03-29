@@ -2,7 +2,7 @@ package multiThreading;
 
 import java.util.concurrent.Callable;
 
-public class AdderThread implements Callable<Integer>{
+public class CallableThread implements Callable<Integer>{
 
 	@Override
 	public Integer call() throws Exception {
