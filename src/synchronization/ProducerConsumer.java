@@ -86,10 +86,10 @@ Runnable consumer2=()->{
 };
 public static void main(String[] args) {
 	ProducerConsumer pc=new ProducerConsumer();
-	Runnable producer2 = pc.producer;
-	Runnable consumer2 = pc.consumer;
-	Thread t1=new Thread(producer2);
-	Thread t2=new Thread(consumer2);
+//	Runnable producer2 = pc.producer;
+//	Runnable consumer2 = pc.consumer;
+	Thread t1=new Thread(pc.producer);
+	Thread t2=new Thread(pc.consumer);
 	t1.start();
 	t2.start();
 }
