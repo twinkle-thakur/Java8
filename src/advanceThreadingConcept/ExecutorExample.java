@@ -18,5 +18,6 @@ public static void main(String[] args) {
 	};
 	service.submit(evenThread);
 	service.submit(oddThread);
+	service.shutdown();
 }
 }
