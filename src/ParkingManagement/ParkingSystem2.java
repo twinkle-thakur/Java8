@@ -6,12 +6,12 @@ import java.util.concurrent.Semaphore;
 
 public class ParkingSystem2 {
 
-Semaphore car=new Semaphore(10);
+Semaphore car=new Semaphore(10);//10 cars can be parked at max
 Runnable entry=()->{
 
 	System.out.println(Thread.currentThread().getName()+" trying to get parking");
 			try {
-				car.acquire();
+				car.acquire();//If parking is available car will aquire it
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -24,7 +24,7 @@ Runnable entry=()->{
 				e.printStackTrace();
 			}
 			System.out.println(Thread.currentThread().getName()+" parked, available slots:"+car.availablePermits());
-			car.release();
+			car.release(); //Car will moved out of the parking
 			
 			System.out.println(Thread.currentThread().getName()+" moved out of parking, available slots:"+car.availablePermits());
 			

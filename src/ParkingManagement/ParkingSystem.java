@@ -15,7 +15,7 @@ import java.util.concurrent.Executors;
 public class ParkingSystem {
 //1)Create Parking with initial capacity=10
 	private List<Integer> parking=new ArrayList<>();
-	private static int capacity=5;
+	private static int capacity=10;
 
 //If someone want to park the car
 	//since 1 car can enter at a time we will synchronize it
