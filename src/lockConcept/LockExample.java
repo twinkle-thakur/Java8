@@ -6,7 +6,7 @@ import java.util.concurrent.locks.ReentrantLock;
 
 public class LockExample {
 	public static void main(String[] args) {
-		//Condition lock=Lock.newCondition();
+		
 		ReentrantLock lock=new ReentrantLock();
 		System.out.println(lock.getHoldCount());
 		System.out.println(lock.isLocked());
